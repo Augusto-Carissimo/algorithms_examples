@@ -51,6 +51,28 @@ class LinkedList
     return 'Not found'
   end
 
+  def search_index(index)
+    if index > self.size - 1
+      return 'Index is out of range'
+    end
+
+    if index == 0
+      return @head.__repr__
+    end
+
+    if index > 0
+      position = index
+      current = @head
+
+      while position > 0
+        current = current.next_node
+        position -= 1
+      end
+
+      return current.__repr__
+    end
+  end
+
   def insert(data, index)
     if index > self.size
       return 'Index is out of range'
@@ -102,6 +124,31 @@ class LinkedList
     current.__repr__
   end
 
+  def remove_index(index)
+    if index > self.size - 1
+      return 'Index is out of range'
+    end
+
+    if index == 0
+      @head = @head.next_node
+      return @head.__repr__
+    end
+
+    if index > 0
+      position = index
+      current = @head
+      previous = nil
+      while position > 0
+        position -= 1
+        previous = current
+        current = current.next_node
+      end
+
+      previous.next_node = current.next_node
+      return current.__repr__
+    end
+  end
+
   def __repr__
     nodes = []
     current = @head
@@ -120,3 +167,10 @@ class LinkedList
     nodes.join('~>')
   end
 end
+
+ll = LinkedList.new
+ll.add(50)
+ll.add(40)
+ll.add(30)
+ll.add(20)
+ll.add(10)
