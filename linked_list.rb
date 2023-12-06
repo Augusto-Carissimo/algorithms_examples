@@ -167,10 +167,3 @@ class LinkedList
     nodes.join('~>')
   end
 end
-
-ll = LinkedList.new
-ll.add(50)
-ll.add(40)
-ll.add(30)
-ll.add(20)
-ll.add(10)
