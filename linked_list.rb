@@ -80,6 +80,28 @@ class LinkedList
     __repr__
   end
 
+  def remove(key)
+    current = @head
+    previous = nil
+    found = false
+
+    while current && !found
+      if current.data == key && current == @head
+        @head = current.next_node
+        found = true
+      elsif current.data == key
+        previous.next_node = current.next_node
+        found = true
+      elsif current.next_node == nil
+        return 'Key not in list'
+      else
+        previous = current
+        current = current.next_node
+      end
+    end
+    current.__repr__
+  end
+
   def __repr__
     nodes = []
     current = @head
