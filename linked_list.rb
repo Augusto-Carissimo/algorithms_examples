@@ -57,7 +57,7 @@ class LinkedList
     end
 
     if index == 0
-      return @head.__repr__
+      return @head
     end
 
     if index > 0
@@ -69,7 +69,7 @@ class LinkedList
         position -= 1
       end
 
-      return current.__repr__
+      return current
     end
   end
 
