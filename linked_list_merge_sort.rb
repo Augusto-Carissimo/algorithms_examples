@@ -20,6 +20,10 @@ def linked_list_merge_sort(linked_list)
     end
   end
 
+  def conquer(left, right)
+
+  end
+
   if linked_list.size == 1 ||linked_list.head.nil?
     return linked_list
   end
